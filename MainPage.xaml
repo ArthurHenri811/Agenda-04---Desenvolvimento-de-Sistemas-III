@@ -1,0 +1,23 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BuscaProdutos.MainPage"
+             Title="Busca de Produtos">
+
+    <VerticalStackLayout Padding="20" Spacing="15">
+
+        <SearchBar Placeholder="Digite o nome do produto"
+                   TextChanged="SearchBar_TextChanged"
+                   x:Name="BuscaProdutosSearchBar"/>
+
+        <CollectionView ItemsSource="{Binding ProdutosFiltrados}">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Frame Margin="5" Padding="10" BorderColor="LightGray" CornerRadius="10">
+                        <Label Text="{Binding Nome}" FontSize="18"/>
+                    </Frame>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+    </VerticalStackLayout>
+</ContentPage>
